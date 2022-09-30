@@ -1,8 +1,6 @@
 .env
 node_modules
-pack-lock.json
-client/nodule_modules
-client/package-lock.json
+
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
