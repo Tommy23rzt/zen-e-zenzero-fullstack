@@ -1,0 +1,99 @@
+.login {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("https://images.unsplash.com/photo-1514064019862-23e2a332a6a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1428&q=80");
+}
+
+.loginWrapper {
+  width: 25%;
+  min-width: 275px;
+  height: 40%;
+  background-color: #fff;
+  margin: auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loginTitle {
+  font-size: 30px;
+  font-weight: 700;
+  color: rgb(5, 71, 71);
+  margin-top: 20px;
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.loginLabel {
+  font-size: 18px;
+  margin: 15px 0;
+}
+.loginInput {
+  padding: 5px;
+  width: 100%;
+  font-size: 17px;
+  border: none;
+  border-bottom: 1px solid grey;
+}
+.loginInput:focus {
+  outline: none;
+}
+.loginBtn {
+  padding: 8px;
+  margin-top: 30px;
+  border: none;
+  color: #fff;
+  background-color: rgb(3, 95, 95);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.loginBtn:disabled {
+  cursor: not-allowed;
+}
+.loginRegisterBtn {
+  align-self: flex-start;
+  margin: 20px 20px 0 0;
+  padding: 11px;
+  background-color: rgb(199, 84, 42);
+  font-size: 17px;
+  color: #fff;
+  font-weight: 550;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btns {
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 480px) {
+  .loginWrapper{
+    margin-left:50px
+  }
+  .loginRegisterBtn{
+    position: absolute;
+  right: 10px
+  }
+}
+
+@media screen and (min-width: 1281px) {
+
+  .loginForm {
+    display: inline-block;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    text-align: center;
+  }
+  .loginRegisterBtn{
+    position: absolute;
+  right: 10px
+  }
+}  
