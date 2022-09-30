@@ -4,7 +4,7 @@ import { format } from "timeago.js";
 import { Link } from "react-router-dom";
 
 export default function Post({ post }) {
-  const PF = 'https://zen-e-zenzero-fullstack.onrender.com/images'
+  const PF = 'https://zen-e-zenzero-fullstack.onrender.com/images/'
   return (
     <div className="post">
       <Link to={`/post/${post._id}`} className="link"  style={{ textDecoration: 'none', color: '#000' }}>
