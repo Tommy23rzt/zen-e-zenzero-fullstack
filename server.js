@@ -45,7 +45,6 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
-app.use("/api", routes);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static("client/build"));
