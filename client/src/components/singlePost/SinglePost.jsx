@@ -20,7 +20,7 @@ export default function SinglePost() {
 
   useEffect(() => {
     const fetchSinglePost = async () => {
-      const res = await axios.get(url +"/posts/" + postId);
+      const res = await axios.get(url +"posts/" + postId);
       setSinglePost(res.data);
       setTitle(res.data.title);
       setDesc(res.data.desc);
