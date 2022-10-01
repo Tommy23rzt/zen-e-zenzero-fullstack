@@ -7,6 +7,7 @@ const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
 const path = require("path");
+const url = "https://zen-e-zenzero-fullstack.onrender.com"
 
 const app = express();
 dotenv.config();
@@ -37,14 +38,14 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
-app.post("/api/upload", upload.single("file"), (req, res) => {
+app.post(url +"/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("File has been uploaded");
 });
 //endpoints
-app.use("/api/auth", authRoute);
-app.use("/api/users", userRoute);
-app.use("/api/posts", postRoute);
-app.use("/api/categories", categoryRoute);
+app.use(url +"/api/auth", authRoute);
+app.use(url +"/api/users", userRoute);
+app.use(url+"/api/posts", postRoute);
+app.use(url+"/api/categories", categoryRoute);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static("client/build"));
