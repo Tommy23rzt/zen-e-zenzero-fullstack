@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const Post = require("../models/Post");
 const User = require("../models/User");
+const url = "https://zen-e-zenzero-fullstack.onrender.com"
+
 
 //CREATE
 router.post("/", async (req, res) => {
@@ -35,7 +37,7 @@ router.put("/:id", async (req, res) => {
 });
 
 //DELETE
-router.delete("/:id", async (req, res) => {
+router.delete(url +"/:id", async (req, res) => {
   const post = await Post.findById(req.params.id);
   if (post?.username === req.body.username) {
     try {
@@ -50,7 +52,7 @@ router.delete("/:id", async (req, res) => {
 });
 
 //GET
-router.get("/:id", async (req, res) => {
+router.get(url +"/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     return res.status(200).json(post);
@@ -60,7 +62,7 @@ router.get("/:id", async (req, res) => {
 });
 
 //GET ALL
-router.get("/", async (req, res) => {
+router.get(url +"/", async (req, res) => {
   const username = req.query.username;
   const categoryName = req.query.category;
   try {

@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const Category = require("../models/Category");
+const url = "https://zen-e-zenzero-fullstack.onrender.com"
 
 //POST CATEGORY
-router.post("/", async (req, res) => {
+router.post(url +"/", async (req, res) => {
   const newCat = new Category(req.body);
   try {
     const savedCat = await newCat.save();
@@ -13,7 +14,7 @@ router.post("/", async (req, res) => {
 });
 
 //GET CATEGORY
-router.get("/", async (req, res) => {
+router.get(url +"/", async (req, res) => {
   try {
     const categories = await Category.find();
     return res.status(200).json(categories);
