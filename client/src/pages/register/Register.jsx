@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./register.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+const url = "https://zen-e-zenzero-fullstack.onrender.com/"
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -13,7 +14,7 @@ export default function Register() {
     e.preventDefault();
     setError(false);
     try {
-      const res = await axios.post("/auth/register", {
+      const res = await axios.post(url + "/auth/register", {
         username,
         email,
         password,

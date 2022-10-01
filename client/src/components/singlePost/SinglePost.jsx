@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+const url = "https://zen-e-zenzero-fullstack.onrender.com/"
 
 export default function SinglePost() {
   const location = useLocation();
@@ -19,7 +20,7 @@ export default function SinglePost() {
 
   useEffect(() => {
     const fetchSinglePost = async () => {
-      const res = await axios.get("/posts/" + postId);
+      const res = await axios.get(url +"/posts/" + postId);
       setSinglePost(res.data);
       setTitle(res.data.title);
       setDesc(res.data.desc);
@@ -31,7 +32,7 @@ export default function SinglePost() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete("/posts/" + postId, {
+      await axios.delete(url + "/posts/" + postId, {
         data: { username: user.username },
       });
       window.location.replace("/");
@@ -40,7 +41,7 @@ export default function SinglePost() {
 
   const handleUpdate = async () => {
     try {
-      await axios.put("/posts/" + postId, {
+      await axios.put(url + "/posts/" + postId, {
         username: user.username,
         title,
         desc,

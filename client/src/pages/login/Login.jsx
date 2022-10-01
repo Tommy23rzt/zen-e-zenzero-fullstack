@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { Context } from "../../context/Context";
 import axios from "axios";
+const url = "https://zen-e-zenzero-fullstack.onrender.com/"
 
 export default function Login() {
   const userRef = useRef();
@@ -14,7 +15,7 @@ export default function Login() {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("/auth/login", {
+      const res = await axios.post(url + "/auth/login", {
         username: userRef.current.value,
         password: passwordRef.current.value,
       });

@@ -4,6 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "./write.css";
 import { Context } from "../../context/Context";
 import axios from "axios";
+const url = "https://zen-e-zenzero-fullstack.onrender.com/"
 
 export default function Write() {
   const [title, setTitle] = useState("");
@@ -15,7 +16,7 @@ export default function Write() {
 
   useEffect(() => {
     const getCategories = async () => {
-      const res = await axios.get("/categories");
+      const res = await axios.get(url +"/categories");
      setCategories(res.data)
     };
     getCategories();
@@ -41,11 +42,11 @@ export default function Write() {
 
       newPost.photo = filename;
       try {
-        await axios.post("/upload", data);
+        await axios.post(url + "/upload", data);
       } catch (err) {}
     }
     try {
-      const res = await axios.post("/posts", newPost);
+      const res = await axios.post(url + "/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) {}
   };
