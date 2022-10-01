@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { Context } from "../../context/Context";
 import axios from "axios";
-const url = "https://zen-e-zenzero-fullstack.onrender.com/"
+const url = "https://zen-e-zenzero-fullstack.onrender.com"
 
 export default function Login() {
   const userRef = useRef();

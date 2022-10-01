@@ -4,6 +4,7 @@ import { Context } from "../../context/Context";
 import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+const url = "https://zen-e-zenzero-fullstack.onrender.com"
 
 export default function Setting() {
   const { user, dispatch } = useContext(Context);
@@ -13,7 +14,7 @@ export default function Setting() {
   const [file, setFile] = useState(null);
   const [success, setSuccess] = useState(false);
   const [delSuccess, setDelSuccess] = useState(false);
-  const PF = "https://zen-e-zenzero-fullstack.onrender.com/images/";
+  const PF = "https://zen-e-zenzero-fullstack.onrender.com/images";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,11 +33,11 @@ export default function Setting() {
 
       updatedUser.profilePicture = filename;
       try {
-        await axios.post("/upload", data);
+        await axios.post(url +"/upload", data);
       } catch (err) {}
     }
     try {
-      const res = await axios.put("/users/" + user._id, updatedUser);
+      const res = await axios.put(url +"/users/" + user._id, updatedUser);
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {

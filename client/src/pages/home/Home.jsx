@@ -5,7 +5,7 @@ import Posts from "../../components/posts/Posts";
 import Sidebar from "../../components/sidebar/Sidebar";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-const url = "https://zen-e-zenzero-fullstack.onrender.com/"
+const url = "https://zen-e-zenzero-fullstack.onrender.com"
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -13,7 +13,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get(url +"/posts" + search);
+      const res = await axios.get(url + "/posts" + search);
       setPosts(res.data);
     };
     fetchPosts();

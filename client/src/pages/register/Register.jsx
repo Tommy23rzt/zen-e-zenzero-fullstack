@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./register.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-const url = "https://zen-e-zenzero-fullstack.onrender.com/"
+const url = "https://zen-e-zenzero-fullstack.onrender.com"
 
 export default function Register() {
   const [username, setUsername] = useState("");

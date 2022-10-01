@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
-const url = "https://zen-e-zenzero-fullstack.onrender.com/"
+const url = "https://zen-e-zenzero-fullstack.onrender.com"
 
 export default function SinglePost() {
   const location = useLocation();

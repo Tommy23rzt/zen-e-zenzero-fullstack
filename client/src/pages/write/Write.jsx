@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "./write.css";
 import { Context } from "../../context/Context";
 import axios from "axios";
-const url = "https://zen-e-zenzero-fullstack.onrender.com/"
+const url = "https://zen-e-zenzero-fullstack.onrender.com"
 
 export default function Write() {
   const [title, setTitle] = useState("");
