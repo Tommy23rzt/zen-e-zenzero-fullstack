@@ -51,6 +51,7 @@ export default function Write() {
   };
 
   return (
+    <>
     <div className="write">
       <div className="writeWrapper">
         {file && (
@@ -96,5 +97,6 @@ export default function Write() {
         </form>
       </div>
     </div>
+  </>
   );
 }

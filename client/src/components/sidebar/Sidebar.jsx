@@ -16,6 +16,7 @@ export default function Sidebar() {
     fetchCategories();
   }, []);
   return (
+    <>
     <div className="sidebar">
       <div className="sidebarWrapper">
         <div className="sidebarItem">
@@ -86,5 +87,6 @@ export default function Sidebar() {
         </div>
       </div>
     </div>
+  </>
   );
 }
