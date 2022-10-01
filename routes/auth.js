@@ -1,9 +1,11 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const brcrypt = require("bcrypt");
+const url = "https://zen-e-zenzero-fullstack.onrender.com"
+
 
 //REGISTER
-router.post("/register", async (req, res) => {
+router.post(url +"/register", async (req, res) => {
   try {
     const salt = await brcrypt.genSalt(10);
     const hashedPassword = await brcrypt.hash(req.body.password, salt);
@@ -30,7 +32,7 @@ router.post("/register", async (req, res) => {
 });
 
 //LOGIN
-router.post("/login", async (req, res) => {
+router.post(url +"/login", async (req, res) => {
   try {
     const user = await User.findOne({ username:req.body.username });
     if (!user) {

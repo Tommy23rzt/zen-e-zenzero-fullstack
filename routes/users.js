@@ -2,6 +2,8 @@ const router = require("express").Router();
 const User = require("../models/User");
 const Post = require("../models/Post");
 const bcrypt = require("bcrypt");
+const url = "https://zen-e-zenzero-fullstack.onrender.com"
+
 
 //UPDATE USER
 router.put("/:id", async (req, res) => {
@@ -28,7 +30,7 @@ router.put("/:id", async (req, res) => {
 });
 
 //DELETE USER
-router.delete("/:id", async (req, res) => {
+router.delete(url +"/:id", async (req, res) => {
   if (req.body.userId === req.params.id) {
     try {
       const user = await User.findById(req.params.id);
@@ -48,7 +50,7 @@ router.delete("/:id", async (req, res) => {
 });
 
 //GET USER
-router.get("/:id", async (req, res) => {
+router.get(url +"/:id", async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
     const { password, ...others } = user._doc;
